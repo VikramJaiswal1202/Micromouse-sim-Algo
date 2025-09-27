@@ -1,6 +1,6 @@
-# mms-c
+# mms-cpp
 
-Write a Micromouse maze-solving algorithm in C.
+Write a Micromouse maze-solving algorithm in C++.
 
 For use with [mackorone/mms](https://github.com/mackorone/mms), a Micromouse simulator.
 
@@ -16,11 +16,11 @@ For use with [mackorone/mms](https://github.com/mackorone/mms), a Micromouse sim
 
 Windows:
 
-![](https://github.com/mackorone/mms-c/blob/master/config-windows.png)
+![](https://github.com/mackorone/mms-cpp/blob/master/config-windows.png)
 
 Linux (Ubuntu):
 
-![](https://github.com/mackorone/mms-c/blob/master/config-linux.png)
+![](https://github.com/mackorone/mms-cpp/blob/master/config-linux.png)
 
 
 ## Notes
