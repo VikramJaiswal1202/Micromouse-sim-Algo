@@ -1,34 +1,36 @@
 #pragma once
-
 #include <string>
 
-class API {
+namespace API {
+    // Maze dimensions
+    int mazeWidth();
+    int mazeHeight();
 
-public:
+    // Wall detection
+    bool wallFront();
+    bool wallRight();
+    bool wallLeft();
 
-    static int mazeWidth();
-    static int mazeHeight();
+    // Movement
+    void moveForward(int distance = 1);
+    void turnRight();
+    void turnLeft();
 
-    static bool wallFront();
-    static bool wallRight();
-    static bool wallLeft();
+    // Walls management
+    void setWall(int x, int y, char direction);
+    void clearWall(int x, int y, char direction);
 
-    static void moveForward(int distance = 1);
-    static void turnRight();
-    static void turnLeft();
+    // Color management
+    void setColor(int x, int y, char color);
+    void clearColor(int x, int y);
+    void clearAllColor();
 
-    static void setWall(int x, int y, char direction);
-    static void clearWall(int x, int y, char direction);
+    // Text management
+    void setText(int x, int y, const std::string& text);
+    void clearText(int x, int y);
+    void clearAllText();
 
-    static void setColor(int x, int y, char color);
-    static void clearColor(int x, int y);
-    static void clearAllColor();
-
-    static void setText(int x, int y, const std::string& text);
-    static void clearText(int x, int y);
-    static void clearAllText();
-
-    static bool wasReset();
-    static void ackReset();
-
-};
+    // Reset handling
+    bool wasReset();
+    void ackReset();
+}

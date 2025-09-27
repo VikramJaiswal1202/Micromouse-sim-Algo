@@ -1,50 +1,47 @@
 #include "API.h"
-
-#include <cstdlib>
 #include <iostream>
+#include <cstdlib>
 
-int API::mazeWidth() {
+namespace API {
+
+int mazeWidth() {
     std::cout << "mazeWidth" << std::endl;
     std::string response;
     std::cin >> response;
     return atoi(response.c_str());
 }
 
-int API::mazeHeight() {
+int mazeHeight() {
     std::cout << "mazeHeight" << std::endl;
     std::string response;
     std::cin >> response;
     return atoi(response.c_str());
 }
 
-bool API::wallFront() {
+bool wallFront() {
     std::cout << "wallFront" << std::endl;
     std::string response;
     std::cin >> response;
     return response == "true";
 }
 
-bool API::wallRight() {
+bool wallRight() {
     std::cout << "wallRight" << std::endl;
     std::string response;
     std::cin >> response;
     return response == "true";
 }
 
-bool API::wallLeft() {
+bool wallLeft() {
     std::cout << "wallLeft" << std::endl;
     std::string response;
     std::cin >> response;
     return response == "true";
 }
 
-void API::moveForward(int distance) {
+void moveForward(int distance) {
     std::cout << "moveForward ";
-    // Don't print distance argument unless explicitly specified, for
-    // backwards compatibility with older versions of the simulator
-    if (distance != 1) {
-        std::cout << distance;
-    }
+    if (distance != 1) std::cout << distance;
     std::cout << std::endl;
     std::string response;
     std::cin >> response;
@@ -54,59 +51,61 @@ void API::moveForward(int distance) {
     }
 }
 
-void API::turnRight() {
+void turnRight() {
     std::cout << "turnRight" << std::endl;
     std::string ack;
     std::cin >> ack;
 }
 
-void API::turnLeft() {
+void turnLeft() {
     std::cout << "turnLeft" << std::endl;
     std::string ack;
     std::cin >> ack;
 }
 
-void API::setWall(int x, int y, char direction) {
+void setWall(int x, int y, char direction) {
     std::cout << "setWall " << x << " " << y << " " << direction << std::endl;
 }
 
-void API::clearWall(int x, int y, char direction) {
+void clearWall(int x, int y, char direction) {
     std::cout << "clearWall " << x << " " << y << " " << direction << std::endl;
 }
 
-void API::setColor(int x, int y, char color) {
+void setColor(int x, int y, char color) {
     std::cout << "setColor " << x << " " << y << " " << color << std::endl;
 }
 
-void API::clearColor(int x, int y) {
+void clearColor(int x, int y) {
     std::cout << "clearColor " << x << " " << y << std::endl;
 }
 
-void API::clearAllColor() {
+void clearAllColor() {
     std::cout << "clearAllColor" << std::endl;
 }
 
-void API::setText(int x, int y, const std::string& text) {
+void setText(int x, int y, const std::string& text) {
     std::cout << "setText " << x << " " << y << " " << text << std::endl;
 }
 
-void API::clearText(int x, int y) {
+void clearText(int x, int y) {
     std::cout << "clearText " << x << " " << y << std::endl;
 }
 
-void API::clearAllText() {
+void clearAllText() {
     std::cout << "clearAllText" << std::endl;
 }
 
-bool API::wasReset() {
+bool wasReset() {
     std::cout << "wasReset" << std::endl;
     std::string response;
     std::cin >> response;
     return response == "true";
 }
 
-void API::ackReset() {
+void ackReset() {
     std::cout << "ackReset" << std::endl;
     std::string ack;
     std::cin >> ack;
 }
+
+} // namespace API
